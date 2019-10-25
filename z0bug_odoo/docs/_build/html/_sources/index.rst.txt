@@ -10,6 +10,7 @@ Welcome to z0bug_odoo's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+.. include:: ../README.rst
 
 
 Indices and tables
