@@ -82,7 +82,7 @@ pygments_style = None
 #     html_theme = 'alabaster'
 # else:
 #     html_theme = 'master'
-html_theme = 'default'
+html_theme = 'classic'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
