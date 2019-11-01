@@ -3,8 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to z0bug_odoo's documentation!
-======================================
+==============================================
+Welcome to z0bug_odoo 0.1.0.1.1 documentation!
+==============================================
+
+|Maturity| |Build Status| |Coverage Status| |license gpl|
 
 .. toctree::
    :maxdepth: 2

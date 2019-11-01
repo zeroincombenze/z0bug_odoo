@@ -12,10 +12,10 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
+import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-# import sphinx_rtd_theme
+import sphinx_rtd_theme
 
 
 # -- Project information -----------------------------------------------------
@@ -40,7 +40,7 @@ release = '0.1.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-#    "sphinx_rtd_theme",
+    "sphinx_rtd_theme",
 ]
 
 
@@ -78,11 +78,26 @@ pygments_style = None
 # a list of builtin themes.
 #
 # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-# if os.environ.get('READTHEDOCS', None) == 'True':
+# f os.environ.get('READTHEDOCS', None) == 'True':
 #     html_theme = 'alabaster'
 # else:
 #     html_theme = 'master'
-html_theme = 'classic'
+html_theme_options = {
+    'canonical_url': '',
+    # 'analytics_id': 'UA-XXXXXXX-1',
+    'logo_only': False,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'vcs_pageview_mode': '',
+    'style_nav_header_background': 'white',
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False
+}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the

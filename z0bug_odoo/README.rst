@@ -1,15 +1,4 @@
 
-====================
-z0bug_odoo 0.1.0.1.1
-====================
-
-
-
-|Maturity| |Build Status| |Coverage Status| |license gpl|
-
-
-.. contents::
-
 
 Overview
 ========
