@@ -1,24 +1,25 @@
 Code example:
-`
-# -*- coding: utf-8 -*-
-#
-# Copyright 2017-19 - SHS-AV s.r.l. <https://www.zeroincombenze.it>
-#
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-#
-from z0bug_odoo import test_common
+::
 
-class ExampleTest(test_common.SingleTransactionCase):
-    def setUp(self):
-        super(ExampleTest, self).setUp()
-        # Assure 2 res.partner records
-        self.build_model_data('res.partner', ['base.res_partner_2',
-                                              'z0bug.res_partner_2'])
+    # -*- coding: utf-8 -*-
+    #
+    # Copyright 2017-19 - SHS-AV s.r.l. <https://www.zeroincombenze.it>
+    #
+    # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+    #
+    from z0bug_odoo import test_common
 
-    def test_example(self):
-        partner = self.browse_ref(self.ref612('base.res_partner_2'))
-        partner = self.browse_ref(self.ref612('z0bug.res_partner_2'))
-`
+    class ExampleTest(test_common.SingleTransactionCase):
+        def setUp(self):
+            super(ExampleTest, self).setUp()
+            # Assure 2 res.partner records
+            self.build_model_data('res.partner', ['base.res_partner_2',
+                                                  'z0bug.res_partner_2'])
+
+        def test_example(self):
+            partner = self.browse_ref(self.ref612('base.res_partner_2'))
+            partner = self.browse_ref(self.ref612('z0bug.res_partner_2'))
+
 
 
 

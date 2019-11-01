@@ -1,4 +1,15 @@
 
+====================
+z0bug_odoo 0.1.0.1.1
+====================
+
+
+
+|Maturity| |Build Status| |Coverage Status| |license gpl|
+
+
+.. contents::
+
 
 Overview
 ========
@@ -47,26 +58,27 @@ Usage
 =====
 
 Code example:
-`
-# -*- coding: utf-8 -*-
-#
-# Copyright 2017-19 - SHS-AV s.r.l. <https://www.zeroincombenze.it>
-#
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-#
-from z0bug_odoo import test_common
+::
 
-class ExampleTest(test_common.SingleTransactionCase):
-    def setUp(self):
-        super(ExampleTest, self).setUp()
-        # Assure 2 res.partner records
-        self.build_model_data('res.partner', ['base.res_partner_2',
-                                              'z0bug.res_partner_2'])
+    # -*- coding: utf-8 -*-
+    #
+    # Copyright 2017-19 - SHS-AV s.r.l. <https://www.zeroincombenze.it>
+    #
+    # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+    #
+    from z0bug_odoo import test_common
 
-    def test_example(self):
-        partner = self.browse_ref(self.ref612('base.res_partner_2'))
-        partner = self.browse_ref(self.ref612('z0bug.res_partner_2'))
-`
+    class ExampleTest(test_common.SingleTransactionCase):
+        def setUp(self):
+            super(ExampleTest, self).setUp()
+            # Assure 2 res.partner records
+            self.build_model_data('res.partner', ['base.res_partner_2',
+                                                  'z0bug.res_partner_2'])
+
+        def test_example(self):
+            partner = self.browse_ref(self.ref612('base.res_partner_2'))
+            partner = self.browse_ref(self.ref612('z0bug.res_partner_2'))
+
 
 
 
@@ -141,7 +153,7 @@ Contributors
 
 This module is part of tools project.
 
-Last Update / Ultimo aggiornamento: 2019-10-25
+Last Update / Ultimo aggiornamento: 2019-11-01
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status
