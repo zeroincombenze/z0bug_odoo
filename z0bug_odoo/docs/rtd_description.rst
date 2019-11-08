@@ -1,3 +1,6 @@
+.. toctree::
+   :maxdepth: 2
+
 Zeroincombenze® continuous testing for odoo
 ===========================================
 
