@@ -10,8 +10,10 @@ Code example:
     from z0bug_odoo import test_common
 
     class ExampleTest(test_common.SingleTransactionCase):
+
         def setUp(self):
             super(ExampleTest, self).setUp()
+            self.set_test_company()
             # Assure 2 res.partner records
             self.build_model_data('res.partner', ['base.res_partner_2',
                                                   'z0bug.res_partner_2'])
@@ -24,6 +26,11 @@ Code example:
 
 
 Following function are avaiable.
+
+`set_test_company(self)`
+
+Create or update company to test and assign it to current user as default company. This function should be put in setUp().
+
 
 `create_id(model, values)`
 
@@ -62,5 +69,35 @@ See valid xid from this document.
 
 Assure records of model with reference list xrefs.
 For every item of xrefs, a record is created o updated.
-Function ref_value is used to retriev values of each record (see above).
+Function ref_value is used to retrieve values of each record (see above).
 
+
+::
+
+    # -*- coding: utf-8 -*-
+    #
+    # Copyright 2017-19 - SHS-AV s.r.l. <https://www.zeroincombenze.it>
+    #
+    # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+    #
+    from zerobug import Z0testOdoo
+
+    class ExampleTest():
+
+        def test_example(self):
+            res = Z0bugOdoo().get_test_values(
+                'res.partner','z0bug.res_partner_1')
+
+
+`get_test_values(self, model, xid)`
+
+Return values of specific xid. If xid is Odoo standard xid, i.e. "base.res_partner_1",
+return empty dictionary.
+If xid begins with "z0bug." return default values to use in test.
+This function is used by `ref_value` to get default values.
+Warning: returned values may contain some field of uninstalled module.
+
+
+`get_data_file(self, model, csv_fn)`
+
+Load data of model from csv_fn. Internal use only.

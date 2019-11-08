@@ -13,7 +13,7 @@ from zerobug import Z0BUG
 # from z0bug_odoo import test_common
 from zerobug import Z0testOdoo
 
-__version__ = "0.1.0.1.1"
+__version__ = "0.1.0.1.2"
 
 MODULE_ID = 'z0bug_odoo'
 TEST_FAILED = 1
@@ -59,7 +59,7 @@ class RegressionTest():
                 'vat': 'IT00115719999'}
         for nm in TEST:
             sts = self.Z.test_result(z0ctx,
-                                     'partner.%s',
+                                     'partner.%s' % nm,
                                      res.get(nm),
                                      TEST[nm])
         return sts
