@@ -1,7 +1,7 @@
 
-====================
-z0bug_odoo 0.1.0.1.2
-====================
+===================
+z0bug_odoo 0.1.0.10
+===================
 
 
 
@@ -24,8 +24,150 @@ This package aim to easily create odoo tests.
 
 *z0bug_odoo* is built on follow concepts:
 
-* Odoo version indipendent
-* Prepared data base, ready to use for tests
+* Odoo version independent
+* Read-made database
+* Quality Check Id
+
+qci
+---
+
++----------+-----------------------------------------------------------------------------------+
+| icq      | description                                                                       |
++----------+-----------------------------------------------------------------------------------+
+| icq_0001 | Credit Transfer payment / Pagamento bonifico                                      |
++----------+-----------------------------------------------------------------------------------+
+| icq_0002 | RiBA payment / Pagamento RiBA (IT)                                                |
++----------+-----------------------------------------------------------------------------------+
+| icq_0003 | Sepa Direct Debit / Pagamento Sepa DD                                             |
++----------+-----------------------------------------------------------------------------------+
+| icq_0006 | Partner with one date payment / Cliente con pagamento in unica soluzione          |
++----------+-----------------------------------------------------------------------------------+
+| icq_0007 | Partner with multiple date payment / Cliente con pagamento di più scadenze        |
++----------+-----------------------------------------------------------------------------------+
+| icq_pa11 | Local partner (Italy) / Cliente italiano                                          |
++----------+-----------------------------------------------------------------------------------+
+| icq_pa12 | EU partner / Cliente intraUE                                                      |
++----------+-----------------------------------------------------------------------------------+
+| icq_pa13 | Extra-EU partner / Cliente extraUE                                                |
++----------+-----------------------------------------------------------------------------------+
+| icq_pa14 | Reverse Charge                                                                    |
++----------+-----------------------------------------------------------------------------------+
+| icq_pa15 | Split Payment                                                                     |
++----------+-----------------------------------------------------------------------------------+
+| icq_pa16 | Partne is PA                                                                      |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac01 | Full Undeductible VAT / IVA totalmente indetraibile                               |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac02 | Undeductible VAT / IVA parzialmente indetraibile                                  |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac03 | Invoice with asset/Fattura di beni strumentali                                    |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac04 | Corrispettivi misti                                                               |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac05 | Corrispettivi ripartiti (ventilazione)                                            |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac06 | Insoluto RiBA                                                                     |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac11 | Sale invoice with split payment / Fattura di vendita con split-payment            |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac12 | Sale invoice with reverse charge / Fattura di vendita con reverse charge          |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac13 | Sale invoice to EU partner / Fattura di vendita intraUE                           |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac14 | Sale invoice to xEU partner / Fattura di vendita extraUE                          |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac15 | Sale invoice with lettera di intento / Fattura di vendita lettera di intento      |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac16 | Sale invoice with withholding / Fattura di vendita ritenuta d'acconto             |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac17 | Sale invoice with enasarco / Fattura di vendita con ensarco                       |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac21 | Purchase invoice with split payment / Fattura di acquisto con split-payment       |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac22 | Purchase invoice with reverse charge / Fattura di acquisto con reverse charge     |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac23 | Purchase invoice from EU partner / Fattura di acquisto intraUE                    |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac24 | Purchase invoice fromxEU partner / Fattura di acquisto extraUE                    |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac25 | Purchase invoice with lettera di intento / Fattura di acquisto lettera di intento |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac26 | Purchase invoice with withholding / Fattura da fornitore con ritenuta d'acconto   |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac27 | Purchase invoice with enasarco / Fattura da fornitore con ensarco                 |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac30 | E-invoice to individual / Fattura elettronica a privato                           |
++----------+-----------------------------------------------------------------------------------+
+| icq_ac31 | E-invoice with virtual stamp / Fattura elettronica con bollo virtuale             |
++----------+-----------------------------------------------------------------------------------+
+
+
+
+
+partner qci
+-----------
+
++----------------------+-------------------------------------+-------------------+----------------------------+
+| id                   | name                                | side              | icq                        |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_1  | Prima Distribuzione S.p.A.          | customer/supplier | icq_0002 icq_0006 icq_pa11 |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_10 | Notaio Libero Jackson               | supplier          |                            |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_11 | Nebula Caffè S.p.A.                 | supplier          |                            |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_12 | Freie Universität Berlin            | supplier          |                            |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_13 | Axelor GmbH                         | customer          | icq_pa12                   |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_14 | SS Carrefur                         | supplier          |                            |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_15 | Ente Porto                          | customer          | icq_0002 icq_pa14 icq_pa16 |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_16 | Viking Office Depot Italia s.r.l.   | customer/supplier |                            |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_17 | Vexor BV                            | supplier          |                            |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_2  | Agro Latte Due  s.n.c.              | customer          | icq_0002 icq_0007          |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_3  | Import Export Trifoglio s.r.l.      | customer          | icq_0001 icq_0006          |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_4  | Delta 4 s.r.l.                      | supplier          |                            |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_5  | Five Stars Hotel                    | supplier          |                            |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_6  | Esa Electronic S.p.A                | customer          | icq_0003                   |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_7  | Università della Svizzera Italiana  | customer          | icq_pa13                   |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_8  | Global Solution s.r.l.              | customer          | icq_pa15                   |
++----------------------+-------------------------------------+-------------------+----------------------------+
+| z0bug.res_partner_9  | Mario Rossi                         | customer          |                            |
++----------------------+-------------------------------------+-------------------+----------------------------+
+
+
+
+
+
+|
+
+Features
+--------
+
+Data to use in tests are store in csv files in data directory.
+File names are tha name of the models (table) with characters '.' (dot) replaced by '_' (underscore)
+
+Header of file must be the names of table fields.
+
+Rows can contains value to store or Odoo external reference or macro.
+
+For type char, text, html, int, float, monetary: value are constants inserted as is.
+
+For type many2one: value may be an integer (record id) or Odoo external reference (format "module.name").
+
+For type data, datetime: value may be a constant or relative date
+
+
 
 
 |
@@ -88,7 +230,7 @@ Following function are avaiable.
 
 `set_test_company(self)`
 
-Create or update company to test. This function should be put in setUp().
+Create or update company to test and assign it to current user as default company. This function should be put in setUp().
 
 
 `create_id(model, values)`
@@ -190,7 +332,7 @@ Contributors
 
 This module is part of tools project.
 
-Last Update / Ultimo aggiornamento: 2019-11-02
+Last Update / Ultimo aggiornamento: 2020-04-03
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status
@@ -250,4 +392,5 @@ Last Update / Ultimo aggiornamento: 2019-11-02
    :target: https://github.com/zeroincombenze/grymb/blob/master/certificates/ade/scope/fatturapa.md
 .. |chat_with_us| image:: https://www.shs-av.com/wp-content/chat_with_us.gif
    :target: https://tawk.to/85d4f6e06e68dd4e358797643fe5ee67540e408b
+
 
